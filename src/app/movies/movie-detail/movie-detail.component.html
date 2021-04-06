@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel-heading" style="background-color: rgba(145, 145, 16, 0.356);">
+        <div class="clearfix">
+          <div class="pull-left">
+            <h1 class="list-group-item-heading">{{movie?.title}}</h1>
+            <img src="{{movie?.imageUrl}}" alt="image" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel-body">
+        <h5>{{movie?.genre}} | {{movie?.minutes}} | {{movie?.rating}} | </h5>
+        <div >
+          <a [routerLink]="['edit']" class="btn btn-primary" type="submit" style="margin: 5px;">Edit</a>
+          <a class="btn btn-danger" type="button" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

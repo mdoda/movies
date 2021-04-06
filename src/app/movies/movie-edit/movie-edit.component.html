@@ -1,0 +1,122 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control required"
+            size="120"
+            max="120"
+            name="title"
+            [ngModel]="movie?.title"
+            #title="ngModel"
+            required>
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="(!title.valid && title.touched)">
+        <p>The title field is required. Please enter the movie title</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="year">Year:</label>
+          <input
+            type="text"
+            id="year"
+            class="form-control required"
+            size="120"
+            max="255"
+            name="year"
+            [ngModel]="movie?.year"
+            #year="ngModel"
+            required
+          >
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="(!year.valid && year.touched)">
+        <p>The year field is required. Please enter the published year of the movie</p>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="rating">Rating:</label>
+          <input
+            type="text"
+            id="rating"
+            class="form-control invalid"
+            size="150"
+            max="255"
+            name="rating"
+            [ngModel]="movie?.rating"
+            #rating="ngModel"
+            required
+            >
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="(!rating.valid && rating.touched)">
+        <p>The rating field is required. Please complete this field</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="minutes">Minutes:</label>
+          <input
+            type="text"
+            id="minutes"
+            class="form-control invalid"
+            size="150"
+            max="255"
+            name="minutes"
+            [ngModel]="movie?.minutes"
+            #minutes="ngModel"
+            required
+            >
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="genre">Genre:</label>
+          <input
+            type="text"
+            id="genre"
+            class="form-control invalid"
+            size="150"
+            max="255"
+            name="genre"
+            [ngModel]="movie?.genre"
+            #genre="ngModel"
+            required
+            >
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="imageUrl">Image URL:</label>
+          <input
+            type="text"
+            id="imageUrl"
+            class="form-control"
+            size="150"
+            max="255"
+            name="imageUrl"
+            [ngModel]="movie?.imageUrl"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button"  (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

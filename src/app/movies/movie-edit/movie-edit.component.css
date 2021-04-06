@@ -1,0 +1,8 @@
+
+.required.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.invalid.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
